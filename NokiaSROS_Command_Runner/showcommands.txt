@@ -1,0 +1,5 @@
+show service service-using
+show port detail
+show port description
+show router arp
+show version
