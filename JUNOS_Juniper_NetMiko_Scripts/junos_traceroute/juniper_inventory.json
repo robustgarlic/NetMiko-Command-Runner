@@ -1,0 +1,14 @@
+[
+    { "host": "LAB1.TEST",
+      "device_type": "juniper_junos"
+    },
+    { "host": "LAB2.TEST",
+      "device_type": "juniper_junos"
+    },
+    { "host": "LAB3.TEST",
+      "device_type": "juniper_junos"
+    },
+    { "host": "LAB4.TEST",
+      "device_type": "juniper_junos"
+    }
+]
