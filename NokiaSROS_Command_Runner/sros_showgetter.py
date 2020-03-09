@@ -105,10 +105,10 @@ def file_writer(gatheroutput):
                                 file.close()
                                 print(Fore.WHITE + '\n**OUTPUT FILE FINISHED WRITING, CHECK OUTPUT FOLDER')
                                 break
-                        elif overwrite_pre == 'n':
-                            print(Fore.RED + '\nInvalid Input: ' + Fore.WHITE + 'You have selected NO. Try again.')
-                        else:
-                            print(Fore.RED + '\nInvalid Input: ' + Fore.WHITE + 'Try again.')
+                      elif overwrite_pre == 'n':
+                         print(Fore.RED + '\nInvalid Input: ' + Fore.WHITE + 'You have selected NO. Try again.')
+                      else:
+                         print(Fore.RED + '\nInvalid Input: ' + Fore.WHITE + 'Try again.')
                  else:
                      print(Fore.CYAN +  '\nWRITING' + Fore.WHITE + '**OUTPUT FILE....')
                      with open(filename_cmd, "a") as file:
