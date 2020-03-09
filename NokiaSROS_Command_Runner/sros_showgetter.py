@@ -91,16 +91,32 @@ def command_runner():
             sys.exit()
 
 ## function to write file based on user input ##
+## checks if file already exists, asks user to overwrite ##
 def file_writer(gatheroutput):
             header = ('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n' + hostname + '\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-            print(Fore.WHITE+ '\nNOW WE WRITE THE OUTPUT')
-            print(Fore.CYAN + 'WRITING **OUTPUT** FILE\n')
-            with open(filename_cmd, "a") as outfile:
-                outfile.write(header + '\n')
-                outfile.write(gatheroutput)
-                outfile.close()
-                print(Fore.WHITE + '\n**OUT** FILE FINISHED WRITING, CHECK OUTPUT FOLDER')
-                break
+            while True:
+                print(Fore.WHITE+ '\nNOW WE WRITE THE OUTPUT')
+                if os.path.isfile(filename_cmd):
+                     overwrite_pre = input(Fore.WHITE + "\nThe **OUTPUT file already exists. Overwrite? y = yes, n = no: ").lower()
+                     if overwrite_pre == 'y':
+                            with open(filename_cmd, "a") as file:
+                                file.write(header + '\n')
+                                file.write(gatheroutput)
+                                file.close()
+                                print(Fore.WHITE + '\n**OUTPUT FILE FINISHED WRITING, CHECK OUTPUT FOLDER')
+                                break
+                        elif overwrite_pre == 'n':
+                            print(Fore.RED + '\nInvalid Input: ' + Fore.WHITE + 'You have selected NO. Try again.')
+                        else:
+                            print(Fore.RED + '\nInvalid Input: ' + Fore.WHITE + 'Try again.')
+                 else:
+                     print(Fore.CYAN +  '\nWRITING' + Fore.WHITE + '**OUTPUT FILE....')
+                     with open(filename_cmd, "a") as file:
+                         file.write(header + '\n')
+                         file.write(gatheroutput)
+                         file.close()
+                         print(Fore.WHITE + '\n**OUTPUT FILE FINISHED WRITING, CHECK OUTPUT FOLDER')
+                         break
 
 if __name__ == "__main__":
     gatheroutput = command_runner()
