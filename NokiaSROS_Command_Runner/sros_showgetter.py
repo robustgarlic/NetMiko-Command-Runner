@@ -64,7 +64,7 @@ if len(sys.argv) < 3:
 netmiko_exceptions = (netmiko.ssh_exception.NetMikoTimeoutException,
                       netmiko.ssh_exception.NetMikoAuthenticationException)
 
-## variables called from custom script ##
+## variables called from custom imported script, in this case userinput ##
 username, password = userinput.get_credentials()
 hostname = userinput.get_host()
 webex_email = userinput.get_email()
