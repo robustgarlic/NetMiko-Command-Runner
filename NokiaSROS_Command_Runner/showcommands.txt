@@ -1,3 +1,4 @@
+show clock
 show service service-using
 show port detail
 show port description
