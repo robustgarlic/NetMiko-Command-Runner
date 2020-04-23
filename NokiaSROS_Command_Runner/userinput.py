@@ -59,3 +59,15 @@ def get_ipaddr():
             print(Fore.WHITE + '\n' + '*' * 48)
             return ipaddr
 
+def get_email():
+    """ Prompt for Webex Teams Email """
+    print(Fore.WHITE + '\n' + '*' * 48)
+    email = input('Please enter email address that is associated with WebEx Teams, i.e. user@domain.com: ')
+    email_verify = input('Verify email: ')
+        if (email != email_verify):
+            print(Fore.WHITE + '\n' + '*' * 48)
+            print('\nEmail does not match. Rerun Script Again.')
+            print(Fore.WHITE + '\n' + '*' * 48)
+            sys.exit()
+        else:
+            return email_verify
